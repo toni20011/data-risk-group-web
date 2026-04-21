@@ -561,9 +561,9 @@
 }
 .partner-tools__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
-  max-width: 1000px;
+  max-width: 760px;
 }
 .partner-tool-card {
   padding: 1.75rem 2rem;
