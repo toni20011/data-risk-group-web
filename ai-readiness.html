@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Readiness Check — Data Risk Group</title>
+  <meta name="description" content="Find out how AI is showing up in your business right now — and whether it's supporting or quietly undermining the trust you've built with clients.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://datariskgroup.com/ai-readiness.html">
+  <meta property="og:title"       content="AI Readiness Check — Data Risk Group">
+  <meta property="og:description" content="A quick assessment of how AI is running in your business — and whether it's working for you or creating risk you can't see yet.">
+  <meta property="og:image"       content="https://datariskgroup.com/images/drg-og.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* ── AI READINESS PAGE ── */
+
+    .air-hero {
+      padding: 9rem 3.5rem 4rem;
+      background: var(--ink);
+      position: relative; overflow: hidden;
+    }
+    .air-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 30%, rgba(41,184,170,.07) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201,165,90,.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .air-hero__inner {
+      position: relative; z-index: 1;
+      max-width: 680px;
+    }
+    .air-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 5vw, 3.5rem);
+      font-weight: 700; line-height: 1.1;
+      color: var(--white); margin-bottom: 1.25rem;
+    }
+    .air-hero h1 em { color: var(--teal); font-style: italic; }
+    .air-hero__sub {
+      font-size: .95rem; color: var(--smoke);
+      line-height: 1.8; max-width: 560px;
+      margin-bottom: 2rem;
+    }
+    .air-hero__meta {
+      display: flex; gap: 1.5rem; flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .air-meta-pill {
+      display: flex; align-items: center; gap: .4rem;
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--smoke);
+    }
+    .air-meta-pill::before {
+      content: '';
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--teal); flex-shrink: 0;
+    }
+
+    /* ── WHAT TO EXPECT ── */
+    .air-expect {
+      padding: 4rem 3.5rem;
+      background: var(--deep);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .air-expect__inner {
+      max-width: 860px;
+    }
+    .air-expect__label {
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--smoke);
+      margin-bottom: 1.75rem;
+    }
+    .air-expect__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    .air-expect-item {
+      display: flex; flex-direction: column; gap: .5rem;
+    }
+    .air-expect-item__num {
+      font-family: 'DM Mono', monospace;
+      font-size: .6rem; letter-spacing: .14em;
+      color: var(--teal);
+    }
+    .air-expect-item__title {
+      font-family: 'Outfit', sans-serif;
+      font-size: .88rem; font-weight: 600;
+      color: var(--white);
+    }
+    .air-expect-item__desc {
+      font-size: .78rem; color: var(--smoke);
+      line-height: 1.6;
+    }
+
+    /* ── ASSESSMENT EMBED / CTA ── */
+    .air-assessment {
+      padding: 4rem 3.5rem;
+      background: var(--ink);
+    }
+    .air-assessment__inner {
+      max-width: 900px;
+    }
+    .air-assessment__label {
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--smoke);
+      margin-bottom: 1rem;
+    }
+    .air-assessment h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 700;
+      color: var(--white); margin-bottom: .5rem;
+    }
+    .air-assessment__partner {
+      font-size: .8rem; color: var(--smoke);
+      margin-bottom: 2rem;
+    }
+    .air-assessment__partner a {
+      color: var(--gold-l); text-decoration: none;
+    }
+    .air-assessment__partner a:hover { color: var(--white); }
+
+    /* Iframe container */
+    .air-iframe-wrap {
+      position: relative;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--deep);
+      min-height: 680px;
+    }
+    .air-iframe-wrap iframe {
+      width: 100%; min-height: 680px;
+      border: none; display: block;
+    }
+    /* Fallback shown if iframe blocked */
+    .air-iframe-fallback {
+      display: none;
+      padding: 3rem 2rem;
+      text-align: center;
+      flex-direction: column;
+      align-items: center; gap: 1.25rem;
+    }
+    .air-iframe-fallback.is-visible {
+      display: flex;
+    }
+    .air-iframe-fallback__icon {
+      width: 48px; height: 48px; color: var(--teal); opacity: .6;
+    }
+    .air-iframe-fallback p {
+      font-size: .88rem; color: var(--smoke);
+      line-height: 1.7; max-width: 420px; margin: 0;
+    }
+
+    /* New-tab CTA (always shown below iframe as secondary option) */
+    .air-newtab {
+      margin-top: 1rem;
+      display: flex; align-items: center; gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .air-newtab__link {
+      font-family: 'DM Mono', monospace;
+      font-size: .68rem; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--smoke);
+      text-decoration: none;
+      display: flex; align-items: center; gap: .4rem;
+      transition: color .2s;
+    }
+    .air-newtab__link:hover { color: var(--gold-l); }
+    .air-newtab__sep { color: var(--rule); }
+
+    /* ── NEXT STEPS ── */
+    .air-nextsteps {
+      padding: 5rem 3.5rem;
+      background: var(--deep);
+      border-top: 1px solid var(--rule);
+    }
+    .air-nextsteps__intro {
+      max-width: 580px; margin-bottom: 2.5rem;
+    }
+    .air-nextsteps__intro h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 700; color: var(--white);
+      margin-bottom: .75rem; line-height: 1.2;
+    }
+    .air-nextsteps__intro h2 em { color: var(--gold); font-style: italic; }
+    .air-nextsteps__intro p {
+      font-size: .9rem; color: var(--smoke); line-height: 1.8;
+    }
+    .air-nextsteps__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      max-width: 900px;
+    }
+    .air-next-card {
+      background: var(--ink);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 1.75rem;
+      display: flex; flex-direction: column; gap: .6rem;
+      transition: border-color .2s;
+    }
+    .air-next-card:hover { border-color: rgba(201,165,90,.35); }
+    .air-next-card__num {
+      font-family: 'DM Mono', monospace;
+      font-size: .62rem; letter-spacing: .16em;
+      color: var(--gold);
+    }
+    .air-next-card__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--white); line-height: 1.25;
+    }
+    .air-next-card__who {
+      font-size: .72rem; color: var(--teal);
+      font-family: 'DM Mono', monospace;
+      letter-spacing: .08em; text-transform: uppercase;
+    }
+    .air-next-card__desc {
+      font-size: .82rem; color: var(--smoke);
+      line-height: 1.7; flex: 1;
+    }
+    .air-next-card__cta {
+      margin-top: .5rem;
+      font-family: 'DM Mono', monospace;
+      font-size: .68rem; letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--gold-l); text-decoration: none;
+      transition: color .2s;
+    }
+    .air-next-card__cta:hover { color: var(--white); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .air-hero { padding: 8rem 1.5rem 3.5rem; }
+      .air-expect { padding: 3.5rem 1.5rem; }
+      .air-expect__grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+      .air-assessment { padding: 3.5rem 1.5rem; }
+      .air-iframe-wrap { min-height: 500px; }
+      .air-iframe-wrap iframe { min-height: 500px; }
+      .air-nextsteps { padding: 4rem 1.5rem; }
+      .air-nextsteps__grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .air-expect__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="logo">Data Risk<span> Group</span></a>
+  <div class="nav-r" id="nav-menu">
+    <a href="index.html#problem">The Problem</a>
+    <a href="index.html#pathway">The Pathway</a>
+    <a href="index.html#sessions">CTC Events</a>
+    <a href="community.html">Community</a>
+    <a href="contact.html" class="nav-cta">Get in Touch</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="air-hero">
+  <div class="air-hero__inner">
+    <div class="lbl">Partner Assessment · Acorns AI Consulting</div>
+    <h1>Is AI working <em>for</em> your business<br>— or quietly against it?</h1>
+    <p class="air-hero__sub">
+      Most small businesses are already using AI tools. Writing emails, summarising notes, responding to inquiries, generating content. But few have stopped to ask whether those tools are supporting the trust they've built with clients — or slowly eroding it in ways that are hard to see until something goes wrong.
+    </p>
+    <p class="air-hero__sub">
+      This quick assessment, developed by DRG partner <strong style="color:var(--white);">Acorns AI Consulting</strong>, gives you a clearer picture of where you stand right now.
+    </p>
+    <div class="air-hero__meta">
+      <span class="air-meta-pill">Takes about 5 minutes</span>
+      <span class="air-meta-pill">Free to complete</span>
+      <span class="air-meta-pill">Instant results</span>
+      <span class="air-meta-pill">No account needed</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section class="air-expect">
+  <div class="air-expect__inner">
+    <div class="air-expect__label">What the assessment covers</div>
+    <div class="air-expect__grid">
+      <div class="air-expect-item">
+        <div class="air-expect-item__num">01</div>
+        <div class="air-expect-item__title">Your current AI use</div>
+        <div class="air-expect-item__desc">Which tools you're already using and how central they are to how your business runs day to day.</div>
+      </div>
+      <div class="air-expect-item">
+        <div class="air-expect-item__num">02</div>
+        <div class="air-expect-item__title">Readiness and risk</div>
+        <div class="air-expect-item__desc">Where your current setup may be creating gaps — in data handling, client experience, or operational reliability.</div>
+      </div>
+      <div class="air-expect-item">
+        <div class="air-expect-item__num">03</div>
+        <div class="air-expect-item__title">Alignment with your goals</div>
+        <div class="air-expect-item__desc">Whether the AI tools you're using match how you actually want to run and grow your business.</div>
+      </div>
+      <div class="air-expect-item">
+        <div class="air-expect-item__num">04</div>
+        <div class="air-expect-item__title">Your results and next steps</div>
+        <div class="air-expect-item__desc">An instant report summarising where you stand, with areas to address and options for what to do next.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ASSESSMENT -->
+<section class="air-assessment" id="assessment">
+  <div class="air-assessment__inner">
+    <div class="air-assessment__label">The Assessment</div>
+    <h2>AI Readiness Mini Assessment</h2>
+    <p class="air-assessment__partner">
+      Developed and hosted by <a href="https://acornsaiminiassessment.netlify.app" target="_blank" rel="noopener">Acorns AI Consulting</a> — a DRG trusted partner. Your responses are processed by Acorns AI's platform. Results are yours to keep and share as you choose.
+    </p>
+
+    <!-- Iframe embed — falls back gracefully if blocked -->
+    <div class="air-iframe-wrap" id="air-iframe-wrap">
+      <iframe
+        id="air-iframe"
+        src="https://acornsaiminiassessment.netlify.app/assessments%20and%20report%20tool/ai_readiness_mini"
+        title="AI Readiness Mini Assessment by Acorns AI Consulting"
+        loading="lazy"
+        allow="forms"
+        sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+      ></iframe>
+      <!-- Fallback if iframe is blocked by the host -->
+      <div class="air-iframe-fallback" id="air-iframe-fallback" aria-live="polite">
+        <svg class="air-iframe-fallback__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="10" width="36" height="28" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M6 16h36" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="11" cy="13" r="1.5" fill="currentColor"/>
+          <circle cx="16" cy="13" r="1.5" fill="currentColor"/>
+          <path d="M20 28l4-4 4 4m-4-4v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p>The assessment is hosted on an external platform and can't be displayed inline here. Use the button below to open it — it takes about 5 minutes and your results appear instantly.</p>
+        <a href="https://acornsaiminiassessment.netlify.app/assessments%20and%20report%20tool/ai_readiness_mini" target="_blank" rel="noopener" class="btn-p">Open the Assessment →</a>
+      </div>
+    </div>
+
+    <!-- Always-visible new tab option -->
+    <div class="air-newtab">
+      <a href="https://acornsaiminiassessment.netlify.app/assessments%20and%20report%20tool/ai_readiness_mini"
+         target="_blank" rel="noopener"
+         class="air-newtab__link">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <path d="M5 2H2a1 1 0 00-1 1v7a1 1 0 001 1h7a1 1 0 001-1V8M7 1h4m0 0v4m0-4L5 7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Open in a new tab
+      </a>
+      <span class="air-newtab__sep">·</span>
+      <span style="font-size:.72rem; color:rgba(143,160,180,.5);">Opens acornsaiminiassessment.netlify.app</span>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section class="air-nextsteps">
+  <div class="air-nextsteps__intro">
+    <div class="lbl">After Your Results</div>
+    <h2>What to do with <em>what you find out.</em></h2>
+    <p>Your results give you a clearer picture. What you do next depends on what came up and how much support you want. Here are three paths.</p>
+  </div>
+
+  <div class="air-nextsteps__grid">
+
+    <div class="air-next-card">
+      <div class="air-next-card__num">Path 01</div>
+      <div class="air-next-card__title">Use the insights on your own</div>
+      <div class="air-next-card__who">Self-directed</div>
+      <p class="air-next-card__desc">
+        Your results include specific areas and suggested next steps. If you have a clear picture and want to work through it independently, the report gives you enough to get started. You can also bring specific questions back to your own team or advisors.
+      </p>
+      <span class="air-next-card__cta" style="color:var(--smoke);">No further action required</span>
+    </div>
+
+    <div class="air-next-card">
+      <div class="air-next-card__num">Path 02</div>
+      <div class="air-next-card__title">Go deeper with Acorns AI</div>
+      <div class="air-next-card__who">Acorns AI Consulting</div>
+      <p class="air-next-card__desc">
+        If your results surface gaps in how your AI tools are set up or where you want to go next, Acorns AI can take you from assessment to action — evaluating your current stack, building a roadmap, and supporting implementation in a way that fits how your business actually runs.
+      </p>
+      <a href="https://acornsaiminiassessment.netlify.app" target="_blank" rel="noopener" class="air-next-card__cta">Learn more about Acorns AI →</a>
+    </div>
+
+    <div class="air-next-card">
+      <div class="air-next-card__num">Path 03</div>
+      <div class="air-next-card__title">Bring your results to DRG</div>
+      <div class="air-next-card__who">Data Risk Group</div>
+      <p class="air-next-card__desc">
+        If your AI readiness results connect to broader questions about client trust, data practices, or how your business is set up overall — that's where DRG comes in. Share what came up and we'll help you see how it fits into the bigger picture and where to focus next.
+      </p>
+      <a href="https://calendly.com/toni-datariskgroup/trust-growth-check-in" target="_blank" rel="noopener" class="air-next-card__cta">Book a free call with DRG →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-brand">
+    <svg width="16" height="20" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="color:var(--gold);opacity:.7;vertical-align:middle;margin-right:.4rem;margin-bottom:2px;"><path d="M10 1L1.5 4.5V12c0 5.8 3.8 10.8 8.5 12.5C14.7 22.8 18.5 17.8 18.5 12V4.5L10 1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><line x1="10" y1="1" x2="10" y2="24.5" stroke="currentColor" stroke-width="0.7" opacity="0.45"/></svg>
+    Data Risk Group LLC
+  </div>
+  <div class="f-social">
+    <a href="#" class="f-social__link" aria-label="LinkedIn" data-social="linkedin">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M7 10v7M7 7v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M11 17v-4c0-1.1.9-2 2-2s2 .9 2 2v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M11 10v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      LinkedIn
+    </a>
+    <a href="#" class="f-social__link" aria-label="Facebook" data-social="facebook">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M13 21v-8h2.5l.5-3H13V8.5C13 7.7 13.4 7 14.5 7H16V4.3S15 4 13.8 4C11.6 4 10 5.5 10 8v2H7.5v3H10v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Facebook
+    </a>
+    <a href="#" class="f-social__link" aria-label="Eventbrite" data-social="eventbrite">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M8 12h6M8 9h8M8 15h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Eventbrite
+    </a>
+    <a href="#" class="f-social__link" aria-label="Luma" data-social="luma">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M8 17V7l4 7 4-7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Luma
+    </a>
+  </div>
+  <div class="f-copy">© 2026 Data Risk Group LLC — All Rights Reserved</div>
+  <div class="f-links">
+    <a href="privacy.html">Privacy Notice</a>
+    <a href="index.html#sessions">CTC Events</a>
+    <a href="trust-check.html">Trust Check</a>
+    <a href="partners.html">Partners</a>
+    <a href="programs.html">Programs</a>
+    <a href="community.html">Community</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Detect if iframe was blocked and show fallback
+  (function () {
+    var iframe = document.getElementById('air-iframe');
+    var fallback = document.getElementById('air-iframe-fallback');
+
+    if (!iframe) return;
+
+    // Give the iframe 4 seconds to load; if it errors or stays blank, show fallback
+    var timer = setTimeout(function () {
+      // Can't reliably detect cross-origin load errors, so keep iframe visible
+      // Fallback is shown only if iframe fires an error event
+    }, 4000);
+
+    iframe.addEventListener('error', function () {
+      clearTimeout(timer);
+      iframe.style.display = 'none';
+      fallback.classList.add('is-visible');
+    });
+
+    // Some browsers block iframes silently — check for zero height after load
+    iframe.addEventListener('load', function () {
+      clearTimeout(timer);
+      try {
+        // If contentDocument is null (cross-origin block), height may still be fine
+        // We trust the iframe loaded if no error fired
+      } catch (e) {
+        // Cross-origin — expected, not an error
+      }
+    });
+  })();
+</script>
+</body>
+</html>

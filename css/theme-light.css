@@ -1,0 +1,328 @@
+/* ══════════════════════════════════════════════════
+   LIGHT THEME — Data Risk Group
+   Loaded after styles.css and v2.css.
+   Overrides variables at the section level so dark
+   anchor sections (hero, trust check, CTA, footer)
+   keep their weight while everything between opens up.
+   ══════════════════════════════════════════════════ */
+
+/* ── PAGE BASE ── */
+body {
+  background: #F8F6F2;
+}
+
+/* Tighten section padding — dark theme needed depth, light needs openness not bulk */
+section {
+  padding: 4rem 3.5rem;
+}
+.v2-trustcheck,
+.v2-about {
+  padding: 4.5rem 3.5rem;
+}
+
+/* ── NAV — keep dark, improves contrast on light page ── */
+nav {
+  background: rgba(14,22,32,.95) !important;
+  border-bottom: 1px solid rgba(14,22,32,.15) !important;
+}
+nav.scrolled {
+  background: rgba(14,22,32,.99) !important;
+}
+
+/* ── HERO — stays dark, it's the visual anchor ── */
+.hero,
+.v2-hero {
+  background: #0E1620;
+}
+/* restore original rule colour inside the dark hero */
+.hero, .v2-hero {
+  --rule: rgba(201,165,90,.18);
+}
+
+/* ── VOICE STRIP ── */
+.voice-strip {
+  background: #EEEAE3;
+  border-top: 1px solid rgba(0,0,0,.08);
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  --white: #1C1C1E;
+  --smoke: #4E5A67;
+  --rule:  rgba(0,0,0,.12);
+}
+.voice-strip__label { color: #4E5A67; }
+.voice-quote        { color: #1C1C1E; }
+.voice-divider      { background: rgba(0,0,0,.15); }
+
+/* ── PROBLEM SECTION ── */
+.v2-problem,
+.problem {
+  background: #F8F6F2;
+  --white: #1C1C1E;
+  --smoke: #4E5A67;
+  --rule:  rgba(0,0,0,.1);
+}
+.prob-intro { color: #4A4A4A; }
+
+/* pain items become white cards */
+.pain-item {
+  background: #FFFFFF;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+}
+.pain-item:hover {
+  background: #F5F3EF !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+.pain-item h4   { color: #1C1C1E; }
+.pain-item p    { color: #4E5A67; }
+.pain-item p { font-size: .85rem !important; }
+.pain-icon      { opacity: .85; }
+
+/* ── FOR STRIP ── */
+.for-strip {
+  background: #EEEAE3;
+  border-top: 1px solid rgba(0,0,0,.08);
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  --white: #1C1C1E;
+  --smoke: #4E5A67;
+  --rule:  rgba(0,0,0,.12);
+}
+.for-strip__label { color: #4E5A67; }
+.for-strip__item  {
+  background: rgba(0,0,0,.06);
+  color: #1C1C1E;
+  border: 1px solid rgba(0,0,0,.1);
+}
+
+/* ── PATHWAY SECTION ── */
+.v2-pathway {
+  background: #F8F6F2;
+  --white: #1C1C1E;
+  --smoke: #4E5A67;
+  --rule:  rgba(0,0,0,.1);
+}
+
+/* step body: white card */
+.pathway-step__body {
+  background: #FFFFFF;
+  border-left: 3px solid rgba(0,0,0,.08) !important;
+  border-radius: 0 8px 8px 0;
+  padding: 0;
+  box-shadow: 0 1px 6px rgba(0,0,0,.07);
+}
+.pathway-step__body h3  { color: #1C1C1E; }
+.pathway-step__body p   { color: #4E5A67; }
+
+/* step number circles keep their dark look — reads well on light */
+.pathway-step__line     { background: rgba(0,0,0,.1) !important; }
+.pathway-step__tag {
+  font-size: .72rem;
+}
+.pathway-step__teaser {
+  color: #4E5A67;
+}
+
+/* step item pills */
+.pathway-step__items span {
+  background: rgba(0,0,0,.06);
+  color: #1C1C1E;
+  border: 1px solid rgba(0,0,0,.1);
+}
+
+/* ── FREE SESSION ── */
+.svc {
+  background: #F8F6F2;
+  --white: #1C1C1E;
+  --smoke: #4E5A67;
+  --rule:  rgba(0,0,0,.1);
+}
+.svc-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  box-shadow: 0 1px 6px rgba(0,0,0,.06);
+}
+.svc-card h3    { color: #1C1C1E; }
+.svc-card p     { color: #4E5A67; }
+.svc-card ul li { color: #4E5A67; }
+.svc-card ul li::before { color: #B8943F; }
+.svc-type {
+  background: rgba(0,0,0,.06) !important;
+  color: #4E5A67 !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+}
+.svc-card__cta {
+  color: #B8943F !important;
+  border-top: 1px solid rgba(0,0,0,.08) !important;
+}
+.svc-card__cta:hover { color: #8A6B20 !important; }
+
+/* ── TRUST CHECK — keep as dark visual anchor ── */
+.v2-trustcheck {
+  background: #162031;
+  --white: #FAFCFF;
+  --smoke: #8FA0B4;
+  --rule:  rgba(201,165,90,.18);
+}
+/* no overrides needed — stays dark */
+
+/* ── ABOUT SECTION ── */
+.v2-about {
+  background: #EEEAE3;
+  --white: #1C1C1E;
+  --smoke: #4E5A67;
+  --rule:  rgba(0,0,0,.1);
+}
+.v2-about__text p { color: #4A4A4A; }
+
+/* founder photo */
+.v2-about__photo {
+  box-shadow: 0 4px 20px rgba(0,0,0,.12);
+}
+.v2-about__photo-caption {
+  color: #7A8490;
+}
+
+/* cred cards: white */
+.v2-cred-item {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+}
+.v2-cred-item__title { color: #1C1C1E !important; }
+.v2-cred-item__desc  { color: #4E5A67 !important; }
+.v2-about__fact {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+}
+.v2-about__fact-label { color: #B8943F !important; }
+.v2-about__fact-val { color: #4E5A67 !important; }
+
+/* ── CTA SECTION — keep dark ── */
+.cta {
+  background: #0E1620 !important;
+  --white: #FAFCFF;
+  --smoke: #8FA0B4;
+  --rule:  rgba(201,165,90,.18);
+}
+
+/* CTA cards */
+.v2-cta-card {
+  --white: #FAFCFF;
+  --smoke: #8FA0B4;
+}
+.v2-cta-card h3 { color: #FAFCFF; }
+.v2-cta-card p  { color: #8FA0B4; }
+
+/* ── FOOTER — keep dark ── */
+footer {
+  background: #080F18 !important;
+  --white: #FAFCFF;
+  --smoke: #8FA0B4;
+}
+
+/* ── SECTION HEADINGS in light sections ── */
+.v2-problem .sh,
+.v2-pathway .sh,
+.svc .sh,
+.v2-about .sh {
+  color: #1C1C1E;
+}
+.v2-problem .sh em,
+.v2-pathway .sh em,
+.svc .sh em,
+.v2-about .sh em {
+  color: #B8943F;   /* slightly richer gold for light-bg legibility */
+}
+
+/* ── LABELS in light sections ── */
+.v2-problem .lbl,
+.v2-pathway .lbl,
+.svc .lbl,
+.v2-about .lbl {
+  color: #1A9B8E;   /* slightly deeper teal for light-bg contrast */
+}
+
+/* ── SECONDARY BUTTON in light sections ── */
+.v2-problem .btn-s,
+.v2-pathway .btn-s,
+.svc .btn-s,
+.v2-about .btn-s {
+  color: #1C1C1E;
+  border-color: rgba(0,0,0,.2);
+}
+.v2-problem .btn-s:hover,
+.v2-pathway .btn-s:hover,
+.svc .btn-s:hover,
+.v2-about .btn-s:hover {
+  border-color: #B8943F;
+  color: #B8943F;
+}
+
+/* ── GOLD ITALIC CALLOUT in problem section ── */
+.prob-intro[style*="border-left"] {
+  border-left-color: #B8943F !important;
+  color: #1C1C1E !important;
+}
+
+/* ── SCORE DEMO (inside dark trust check — no change needed) ── */
+
+/* ── TRUSTCHECK LIST ── */
+.trustcheck-list li { color: #8FA0B4; }
+.trustcheck-list li::before { color: #C9A55A; }
+
+/* ── SCROLL REVEAL — no colour impact ── */
+
+/* ── RESPONSIVE: nothing extra needed — section colours handle it ── */
+
+/* ── CTC FORMAT STRIP (light) ── */
+.svc .ctc-format__name { color: #1C1C1E; }
+.svc .ctc-format__desc { color: #4E5A67; }
+.svc .ctc-format__num  { color: #B8943F; }
+.svc .ctc-format__divider { color: rgba(0,0,0,.18); }
+
+/* ── SESSION DATES (light) ── */
+.svc .sessions-upcoming__label { color: #6B7580; }
+.svc .session-date {
+  background: #FFFFFF;
+  border-color: rgba(0,0,0,.09);
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+}
+.svc .session-date--inperson { border-left: 3px solid #B8943F; }
+.svc .session-date--virtual  { border-left: 3px solid #1A9B8E; }
+.svc .session-date__track--inperson { color: #B8943F; }
+.svc .session-date__track--virtual  { color: #1A9B8E; }
+.svc .session-date__time  { color: #6B7580; }
+.svc .session-date__title { color: #1C1C1E; }
+.svc .session-date__reg-label { color: #6B7580; }
+.svc .session-date__day,
+.svc .session-date__mon { color: #6B7580; }
+.svc .session-date__num { color: #B8943F; }
+.svc .sd-reg-link--luma { color: #1A6E68; border-color: rgba(26,110,104,.3); }
+.svc .sd-reg-link--eb   { color: #c04a2a; border-color: rgba(192,74,42,.3); }
+
+/* ── PARTNER TOOLS (light) ── */
+.partner-tools {
+  background: #EEE9E1;
+  border-top: 1px solid rgba(0,0,0,.07);
+}
+.partner-tools h2 { color: #1C1C1E; }
+.partner-tools .lbl { color: #1A9B8E; }
+.partner-tools__intro { color: #4E5A67; }
+.partner-tool-card {
+  background: #FFFFFF;
+  border-color: rgba(0,0,0,.09);
+  box-shadow: 0 1px 6px rgba(0,0,0,.06);
+}
+.partner-tool-card:hover {
+  border-color: rgba(184,148,63,.4);
+  box-shadow: 0 3px 12px rgba(0,0,0,.09);
+}
+.partner-tool-card__provider { color: #B8943F; }
+.partner-tool-card__name { color: #1C1C1E; }
+.partner-tool-card__desc { color: #4E5A67; }
+.partner-tool-card__link { color: #B8943F; }
+.partner-tool-card__link:hover { color: #7A5E18; }
+.partner-tools__note { color: rgba(75,85,99,.6); border-left-color: rgba(0,0,0,.12); }
+.partner-tools__all { color: #B8943F; }
+.partner-tools__all:hover { color: #7A5E18; }

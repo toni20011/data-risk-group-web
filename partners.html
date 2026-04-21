@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trusted Partners — Data Risk Group</title>
+  <meta name="description" content="DRG works with a curated network of trusted partners across experience, transparency, safety, and responsible AI — to help small businesses build trust at every level.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://datariskgroup.com/partners.html">
+  <meta property="og:title"       content="Trusted Partners — Data Risk Group">
+  <meta property="og:description" content="A curated network of partners supporting trusted connections across your business — experience, transparency, safety, and responsible AI.">
+  <meta property="og:image"       content="https://datariskgroup.com/images/drg-og.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* ── PARTNERS PAGE ── */
+
+    .pt-hero {
+      padding: 9rem 3.5rem 5rem;
+      background: var(--ink);
+      position: relative; overflow: hidden;
+    }
+    .pt-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 55% 50% at 75% 35%, rgba(201,165,90,.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 55% at 15% 75%, rgba(41,184,170,.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .pt-hero__inner {
+      position: relative; z-index: 1;
+      max-width: 720px;
+    }
+    .pt-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 5vw, 3.8rem);
+      font-weight: 700; line-height: 1.1;
+      color: var(--white); margin-bottom: 1.25rem;
+    }
+    .pt-hero h1 em { color: var(--gold); font-style: italic; }
+    .pt-hero__intro {
+      font-size: 1rem; color: var(--smoke);
+      line-height: 1.8; max-width: 600px;
+      margin-bottom: 1.25rem;
+    }
+    .pt-hero__philosophy {
+      border-left: 2px solid var(--rule);
+      padding: .85rem 1.25rem;
+      margin-top: 1.75rem;
+      max-width: 560px;
+    }
+    .pt-hero__philosophy p {
+      font-size: .88rem; color: var(--smoke);
+      line-height: 1.8; margin: 0;
+      font-style: italic;
+    }
+
+    /* ── AREA SECTIONS ── */
+    .pt-areas {
+      padding: 5rem 3.5rem;
+      background: var(--ink);
+      display: flex; flex-direction: column; gap: 5rem;
+    }
+    .pt-area { max-width: 860px; }
+    .pt-area__header {
+      display: flex; align-items: flex-start;
+      gap: 1.5rem; margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .pt-area__num {
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem; letter-spacing: .18em;
+      color: var(--gold); flex-shrink: 0;
+      padding-top: .5rem;
+    }
+    .pt-area__title-block h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem; font-weight: 700;
+      color: var(--white); margin-bottom: .35rem;
+    }
+    .pt-area__title-block p {
+      font-size: .88rem; color: var(--smoke);
+      line-height: 1.7; max-width: 560px;
+      margin: 0;
+    }
+    .pt-area__body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    /* Partner types list */
+    .pt-types {
+      background: var(--deep);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+    }
+    .pt-types__label {
+      font-family: 'DM Mono', monospace;
+      font-size: .62rem; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--smoke);
+      margin-bottom: 1rem;
+    }
+    .pt-types__list {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: .55rem;
+    }
+    .pt-types__list li {
+      font-size: .84rem; color: var(--smoke);
+      line-height: 1.5; padding-left: 1rem;
+      position: relative;
+    }
+    .pt-types__list li::before {
+      content: '—';
+      position: absolute; left: 0;
+      color: var(--rule); font-size: .75rem;
+    }
+
+    /* Named partner card */
+    .pt-partner-card {
+      background: var(--panel);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 1.75rem;
+      display: flex; flex-direction: column; gap: .6rem;
+      position: relative;
+    }
+    .pt-partner-card--featured {
+      border-color: rgba(201,165,90,.35);
+    }
+    .pt-partner-card__eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: .6rem; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .pt-partner-card__name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--white); margin: 0;
+    }
+    .pt-partner-card__role {
+      font-size: .78rem; color: var(--gold-l);
+      font-style: italic;
+    }
+    .pt-partner-card__desc {
+      font-size: .82rem; color: var(--smoke);
+      line-height: 1.7; flex: 1;
+    }
+    .pt-partner-card__why {
+      margin-top: .5rem;
+      padding-top: .85rem;
+      border-top: 1px solid var(--rule);
+    }
+    .pt-partner-card__why-label {
+      font-family: 'DM Mono', monospace;
+      font-size: .58rem; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--smoke);
+      margin-bottom: .4rem;
+    }
+    .pt-partner-card__why p {
+      font-size: .8rem; color: var(--smoke);
+      line-height: 1.65; margin: 0;
+    }
+    .pt-partner-card__links {
+      display: flex; gap: .75rem;
+      flex-wrap: wrap; margin-top: .5rem;
+    }
+    .pt-partner-card__link {
+      font-family: 'DM Mono', monospace;
+      font-size: .68rem; letter-spacing: .07em;
+      text-transform: uppercase; color: var(--gold-l);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .pt-partner-card__link:hover { color: var(--white); }
+    .pt-partner-card__link--tool {
+      padding: .22rem .65rem;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      font-size: .65rem;
+    }
+    .pt-partner-card__link--tool:hover {
+      border-color: rgba(201,165,90,.4);
+      background: rgba(201,165,90,.05);
+    }
+    .pt-partner-card__link--soon {
+      opacity: .5; cursor: default;
+      pointer-events: none;
+    }
+
+    /* TBD placeholder card */
+    .pt-tbd-card {
+      background: var(--deep);
+      border: 1px dashed rgba(143,160,180,.2);
+      border-radius: 8px;
+      padding: 1.75rem;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 160px;
+    }
+    .pt-tbd-card__text {
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem; letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(143,160,180,.4);
+      text-align: center;
+    }
+
+    /* ── LOGO STRIP ── */
+    .pt-logos {
+      padding: 4rem 3.5rem;
+      background: var(--deep);
+      border-top: 1px solid var(--rule);
+    }
+    .pt-logos__label {
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--smoke);
+      margin-bottom: 2rem;
+    }
+    .pt-logos__grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      align-items: center;
+      max-width: 860px;
+    }
+    .pt-logo-tile {
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem 1.75rem;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      background: var(--ink);
+      min-width: 140px; min-height: 64px;
+      transition: border-color .2s;
+      text-decoration: none;
+    }
+    .pt-logo-tile:hover { border-color: rgba(201,165,90,.4); }
+    .pt-logo-tile img {
+      max-height: 32px; max-width: 120px;
+      object-fit: contain; opacity: .8;
+      filter: brightness(0) invert(1);
+      transition: opacity .2s;
+    }
+    .pt-logo-tile:hover img { opacity: 1; }
+    /* Text fallback when no logo image yet */
+    .pt-logo-tile__text {
+      font-family: 'Outfit', sans-serif;
+      font-size: .8rem; font-weight: 500;
+      color: var(--smoke); letter-spacing: .02em;
+      text-align: center;
+    }
+    .pt-logos__note {
+      margin-top: 1.5rem;
+      font-size: .75rem; color: rgba(143,160,180,.5);
+      line-height: 1.7;
+    }
+
+    /* ── STRATEGIC PARTNER SECTION ── */
+    .pt-strategic {
+      padding: 5rem 3.5rem;
+      background: var(--deep);
+      border-top: 1px solid var(--rule);
+    }
+    .pt-strategic__intro {
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+    }
+    .pt-strategic__intro h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3vw, 2rem);
+      font-weight: 700; color: var(--white);
+      margin-bottom: .75rem;
+    }
+    .pt-strategic__intro h2 em { color: var(--gold); font-style: italic; }
+    .pt-strategic__intro p {
+      font-size: .9rem; color: var(--smoke);
+      line-height: 1.85;
+    }
+    .pt-strategic__layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 2.5rem;
+      align-items: start;
+      max-width: 940px;
+    }
+    /* Bridge diagram */
+    .pt-bridge {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 1.5rem;
+    }
+    .pt-bridge__item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .pt-bridge__connector {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+      width: 20px;
+    }
+    .pt-bridge__dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: .7;
+      flex-shrink: 0;
+      margin-top: .35rem;
+    }
+    .pt-bridge__line {
+      width: 1px; height: 28px;
+      background: linear-gradient(to bottom, rgba(201,165,90,.3), rgba(201,165,90,.08));
+      margin: 2px 0;
+    }
+    .pt-bridge__text {
+      padding-bottom: .85rem;
+    }
+    .pt-bridge__label {
+      font-family: 'DM Mono', monospace;
+      font-size: .6rem; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: .2rem;
+    }
+    .pt-bridge__desc {
+      font-size: .82rem; color: var(--smoke);
+      line-height: 1.55;
+    }
+    /* Strategic partner card — wider/more prominent */
+    .pt-partner-card--strategic {
+      border-color: rgba(201,165,90,.3);
+    }
+
+    /* ── CTA ── */
+    .pt-cta {
+      padding: 5rem 3.5rem;
+      background: var(--ink);
+      border-top: 1px solid var(--rule);
+      text-align: center;
+    }
+    .pt-cta h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700; color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .pt-cta h2 em { color: var(--gold); font-style: italic; }
+    .pt-cta p {
+      font-size: .93rem; color: var(--smoke);
+      line-height: 1.8; max-width: 500px;
+      margin: 0 auto 2rem;
+    }
+    .pt-cta__btns {
+      display: flex; gap: 1rem;
+      justify-content: center; flex-wrap: wrap;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .pt-hero { padding: 8rem 1.5rem 4rem; }
+      .pt-strategic { padding: 4rem 1.5rem; }
+      .pt-strategic__layout { grid-template-columns: 1fr; }
+      .pt-areas { padding: 4rem 1.5rem; gap: 4rem; }
+      .pt-area__body { grid-template-columns: 1fr; }
+      .pt-area__header { flex-direction: column; gap: .75rem; }
+      .pt-logos { padding: 3rem 1.5rem; }
+      .pt-logos__grid { gap: .75rem; }
+      .pt-logo-tile { min-width: 110px; padding: .85rem 1.25rem; }
+      .pt-cta { padding: 4rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="logo">Data Risk<span> Group</span></a>
+  <div class="nav-r" id="nav-menu">
+    <a href="index.html#problem">The Problem</a>
+    <a href="index.html#pathway">The Pathway</a>
+    <a href="index.html#sessions">CTC Events</a>
+    <a href="community.html">Community</a>
+    <a href="contact.html" class="nav-cta">Get in Touch</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="pt-hero">
+  <div class="pt-hero__inner">
+    <div class="lbl">Partner Network</div>
+    <h1>Trusted <em>Partners.</em></h1>
+    <p class="pt-hero__intro">
+      Trust doesn't show up in just one place in your business. It shows up in how people find you, how your website feels, how you communicate your practices, how safely you handle information, and how responsibly you use the tools that run your operation.
+    </p>
+    <p class="pt-hero__intro">
+      DRG works with a small, intentional group of partners — including one strategic partner who extends what DRG does directly to your website. These are not referrals. We look for alignment in how we approach the work — clarity over complexity, practical over theoretical, and always with the client's best outcome in mind.
+    </p>
+    <div class="pt-hero__philosophy">
+      <p>"When we bring in a partner, it's because they add something specific that complements what we're already doing — not duplicates it. And because there's alignment in how we think about what's best for the client."</p>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGIC PARTNER -->
+<section class="pt-strategic reveal">
+  <div class="pt-strategic__intro">
+    <div class="lbl">Strategic Partner</div>
+    <h2>The same lens — <em>focused on your website.</em></h2>
+    <p>DRG looks across every place trust shows up in your business. But for most small service businesses, the website is the first place a client judges you — before a single conversation happens. Data Pilots takes DRG's trust framework and applies it specifically there, translating it into something you can actively see, improve, and manage without needing outside help for every check.</p>
+  </div>
+  <div class="pt-strategic__layout">
+    <!-- Left: bridge diagram -->
+    <div class="pt-bridge">
+      <div class="pt-bridge__item">
+        <div class="pt-bridge__connector">
+          <div class="pt-bridge__dot"></div>
+          <div class="pt-bridge__line"></div>
+        </div>
+        <div class="pt-bridge__text">
+          <div class="pt-bridge__label">DRG</div>
+          <div class="pt-bridge__desc">Full trust picture — across how clients find you, how you convert them, and how you deliver. All three phases. All the areas where trust is built or lost.</div>
+        </div>
+      </div>
+      <div class="pt-bridge__item">
+        <div class="pt-bridge__connector">
+          <div class="pt-bridge__dot"></div>
+          <div class="pt-bridge__line"></div>
+        </div>
+        <div class="pt-bridge__text">
+          <div class="pt-bridge__label">Data Pilots</div>
+          <div class="pt-bridge__desc">Same key areas and perspectives, scoped to your website. They surface what's actually happening with your trust signals — so the picture DRG paints becomes something you can act on directly.</div>
+        </div>
+      </div>
+      <div class="pt-bridge__item">
+        <div class="pt-bridge__connector">
+          <div class="pt-bridge__dot"></div>
+        </div>
+        <div class="pt-bridge__text">
+          <div class="pt-bridge__label">You</div>
+          <div class="pt-bridge__desc">Actively see, improve, and manage the trust points on your most visible business asset — without waiting on a consultant every time something needs checking.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Right: partner card -->
+    <div class="pt-partner-card pt-partner-card--featured pt-partner-card--strategic">
+      <div class="pt-partner-card__eyebrow">Strategic Partner</div>
+      <h3 class="pt-partner-card__name">Data Pilots</h3>
+      <div class="pt-partner-card__role">Website trust visibility and management</div>
+      <p class="pt-partner-card__desc">
+        Data Pilots builds tools that give small business owners direct visibility into their website trust signals — the privacy notices, contact forms, conversion points, and client-facing details that shape whether a visitor stays or moves on. The same areas DRG looks at, made manageable at the website level.
+      </p>
+      <div class="pt-partner-card__why">
+        <div class="pt-partner-card__why-label">How DRG and Data Pilots work together</div>
+        <p>DRG identifies what your trust gaps mean for your growth and client relationships. Data Pilots gives you the website-specific tools to see those gaps clearly and address them — coordinating so that the advisory work and the active management reinforce each other rather than running in parallel.</p>
+      </div>
+      <div class="pt-partner-card__links">
+        <a href="https://datapilots.tech" target="_blank" rel="noopener" class="pt-partner-card__link">datapilots.tech →</a>
+        <span class="pt-partner-card__link pt-partner-card__link--tool pt-partner-card__link--soon">Website Trust Check · Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUR AREAS -->
+<section class="pt-areas">
+
+  <!-- 01 EXPERIENCE -->
+  <div class="pt-area reveal">
+    <div class="pt-area__header">
+      <div class="pt-area__num">01</div>
+      <div class="pt-area__title-block">
+        <h2>Experience</h2>
+        <p>How people interact with your business — from the first impression to every touchpoint along the way. This is where trust is built or lost before a single conversation happens.</p>
+      </div>
+    </div>
+    <div class="pt-area__body">
+      <div class="pt-types">
+        <div class="pt-types__label">Types of partners in this area</div>
+        <ul class="pt-types__list">
+          <li>Human-centered design and client journey specialists</li>
+          <li>UX and conversion specialists who identify where visitors drop off</li>
+          <li>Brand and digital presence consultants</li>
+        </ul>
+      </div>
+      <div class="pt-partner-card pt-partner-card--featured">
+        <div class="pt-partner-card__eyebrow">Featured Partner · Experience</div>
+        <h3 class="pt-partner-card__name">The HCD Experience</h3>
+        <div class="pt-partner-card__role">Human-centered design and client journey strategy</div>
+        <p class="pt-partner-card__desc">
+          The HCD Experience applies human-centered design principles to how small businesses show up to their clients — from first impression through every touchpoint. Where DRG identifies where trust is being lost, HCDx helps redesign the experience so it earns it back.
+        </p>
+        <div class="pt-partner-card__why">
+          <div class="pt-partner-card__why-label">Why this partnership</div>
+          <p>Trust gaps in the experience layer are often design problems. DRG names what's going wrong; HCDx has the methodology to fix it — centering the actual human on the other side of your business.</p>
+        </div>
+        <div class="pt-partner-card__links">
+          <a href="https://thehcdx.com" target="_blank" rel="noopener" class="pt-partner-card__link">thehcdx.com →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 TRANSPARENCY -->
+  <div class="pt-area reveal">
+    <div class="pt-area__header">
+      <div class="pt-area__num">02</div>
+      <div class="pt-area__title-block">
+        <h2>Transparency</h2>
+        <p>How clearly and confidently you communicate about your data practices, policies, and how you handle client information. Clients are asking these questions whether they say so or not.</p>
+      </div>
+    </div>
+    <div class="pt-area__body">
+      <div class="pt-types">
+        <div class="pt-types__label">Types of partners in this area</div>
+        <ul class="pt-types__list">
+          <li>Privacy and data law professionals for small and growing businesses</li>
+          <li>Policy specialists who translate legal language into plain, client-facing language</li>
+          <li>Advisors who help businesses communicate their data practices with confidence</li>
+        </ul>
+      </div>
+      <div class="pt-partner-card pt-partner-card--featured">
+        <div class="pt-partner-card__eyebrow">Featured Partner · Transparency</div>
+        <h3 class="pt-partner-card__name">Fischer Law</h3>
+        <div class="pt-partner-card__role">Privacy and data law for small and growing businesses</div>
+        <p class="pt-partner-card__desc">
+          Fischer Law helps businesses understand what they're actually required to do — and what they should do — when it comes to privacy, data practices, and client-facing legal communication. Practical, plain-language counsel without the enterprise price tag.
+        </p>
+        <div class="pt-partner-card__why">
+          <div class="pt-partner-card__why-label">Why this partnership</div>
+          <p>When DRG surfaces transparency gaps — policies that don't match how you actually work, or client-facing language that creates more confusion than confidence — Fischer Law provides the legal grounding to close them properly.</p>
+        </div>
+        <div class="pt-partner-card__links">
+          <a href="https://jordanfischerlaw.com" target="_blank" rel="noopener" class="pt-partner-card__link">jordanfischerlaw.com →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 SAFETY -->
+  <div class="pt-area reveal">
+    <div class="pt-area__header">
+      <div class="pt-area__num">03</div>
+      <div class="pt-area__title-block">
+        <h2>Safety</h2>
+        <p>How you protect your business systems, client data, and digital infrastructure. Safety isn't just about preventing breaches — it's about having practices in place that hold up if something does go wrong.</p>
+      </div>
+    </div>
+    <div class="pt-area__body">
+      <div class="pt-types">
+        <div class="pt-types__label">Types of partners in this area</div>
+        <ul class="pt-types__list">
+          <li>Cybersecurity consultants and MSPs with small business expertise</li>
+          <li>Security assessment specialists who surface vulnerabilities before clients do</li>
+          <li>Compliance and risk management professionals</li>
+        </ul>
+      </div>
+      <div class="pt-tbd-card">
+        <div class="pt-tbd-card__text">Named partners<br>coming soon</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 RESPONSIBLE AI -->
+  <div class="pt-area reveal">
+    <div class="pt-area__header">
+      <div class="pt-area__num">04</div>
+      <div class="pt-area__title-block">
+        <h2>Responsible AI</h2>
+        <p>How you adopt, evaluate, and use AI tools in a way that supports trust and long-term growth. AI is already running in most small businesses — the question is whether it's working for you or quietly creating friction and risk you can't see yet.</p>
+      </div>
+    </div>
+    <div class="pt-area__body">
+      <div class="pt-types">
+        <div class="pt-types__label">Types of partners in this area</div>
+        <ul class="pt-types__list">
+          <li>AI strategy and readiness consultants for small and growing businesses</li>
+          <li>Implementation specialists who set up AI tools with your business context in mind</li>
+          <li>Assessment and audit tools that evaluate how your current AI stack holds up</li>
+        </ul>
+      </div>
+      <div class="pt-partner-card pt-partner-card--featured">
+        <div class="pt-partner-card__eyebrow">Featured Partner · Responsible AI</div>
+        <h3 class="pt-partner-card__name">Acorns AI Consulting</h3>
+        <div class="pt-partner-card__role">AI assessment, strategy and implementation</div>
+        <p class="pt-partner-card__desc">
+          Acorns AI Consulting works with businesses to assess how AI is currently being used, identify opportunities, and recommend the right tools and next steps based on how the business actually operates — not how AI vendors say it should.
+        </p>
+        <div class="pt-partner-card__why">
+          <div class="pt-partner-card__why-label">Why this partnership</div>
+          <p>DRG focuses on how AI fits into your customer journey and where it may impact trust. Acorns AI goes deeper — evaluating tools, building a roadmap, and supporting implementation. Together, this creates a more complete and intentional path forward.</p>
+        </div>
+        <div class="pt-partner-card__links">
+          <a href="ai-readiness.html" class="pt-partner-card__link pt-partner-card__link--tool">AI Readiness Mini Assessment</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 05 INDUSTRY PARTNERS -->
+  <div class="pt-area reveal">
+    <div class="pt-area__header">
+      <div class="pt-area__num">05</div>
+      <div class="pt-area__title-block">
+        <h2>Industry Partners</h2>
+        <p>Specialists who work within specific industries and learning contexts — bringing depth of sector knowledge that shapes how trust gets built with particular audiences, communities, and client types.</p>
+      </div>
+    </div>
+    <div class="pt-area__body">
+      <div class="pt-types">
+        <div class="pt-types__label">Types of partners in this area</div>
+        <ul class="pt-types__list">
+          <li>Learning and development professionals who work with small business owners</li>
+          <li>Community-based organisations building trust-forward business environments</li>
+          <li>Industry associations and networks with focused membership audiences</li>
+        </ul>
+      </div>
+      <div class="pt-partner-card pt-partner-card--featured">
+        <div class="pt-partner-card__eyebrow">Featured Partner · Learning & Development</div>
+        <h3 class="pt-partner-card__name">MyQuest</h3>
+        <div class="pt-partner-card__role">Guided learning and development platform</div>
+        <p class="pt-partner-card__desc">
+          MyQuest is a learning platform built around guided, action-oriented journeys — designed so that learners actually complete and apply what they're being taught. For DRG clients who want a structured path through trust-building work, MyQuest provides the delivery layer that turns advisory insights into trackable progress.
+        </p>
+        <div class="pt-partner-card__why">
+          <div class="pt-partner-card__why-label">Why this partnership</div>
+          <p>Knowing what to fix is only the first step. MyQuest gives DRG a way to structure the implementation journey — making it guided, measurable, and something a business owner can actually move through at their own pace.</p>
+        </div>
+        <div class="pt-partner-card__links">
+          <a href="https://myquest.co" target="_blank" rel="noopener" class="pt-partner-card__link">myquest.co →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- LOGO STRIP -->
+<section class="pt-logos">
+  <div class="pt-logos__label">Our partners</div>
+  <div class="pt-logos__grid">
+
+    <a href="https://datapilots.tech" target="_blank" rel="noopener" class="pt-logo-tile" aria-label="Data Pilots">
+      <!-- Swap img src when logo file is available -->
+      <!-- <img src="images/logo-datapilots.png" alt="Data Pilots"> -->
+      <span class="pt-logo-tile__text">Data Pilots</span>
+    </a>
+
+    <a href="https://acornsaiminiassessment.netlify.app/assessments%20and%20report%20tool/ai_readiness_mini" target="_blank" rel="noopener" class="pt-logo-tile" aria-label="Acorns AI Consulting">
+      <!-- Swap img src when logo file is available -->
+      <!-- <img src="images/logo-acornsai.png" alt="Acorns AI Consulting"> -->
+      <span class="pt-logo-tile__text">Acorns AI<br>Consulting</span>
+    </a>
+
+    <a href="https://thehcdx.com" target="_blank" rel="noopener" class="pt-logo-tile" aria-label="The HCD Experience">
+      <!-- <img src="images/logo-hcdx.png" alt="The HCD Experience"> -->
+      <span class="pt-logo-tile__text">The HCD<br>Experience</span>
+    </a>
+
+    <a href="https://jordanfischerlaw.com" target="_blank" rel="noopener" class="pt-logo-tile" aria-label="Fischer Law">
+      <!-- <img src="images/logo-fischerlaw.png" alt="Fischer Law"> -->
+      <span class="pt-logo-tile__text">Fischer Law</span>
+    </a>
+
+    <a href="https://myquest.co" target="_blank" rel="noopener" class="pt-logo-tile" aria-label="MyQuest">
+      <!-- <img src="images/logo-myquest.png" alt="MyQuest"> -->
+      <span class="pt-logo-tile__text">MyQuest</span>
+    </a>
+
+    <!-- Add more logo tiles here as partners are onboarded:
+    <a href="[url]" target="_blank" rel="noopener" class="pt-logo-tile" aria-label="[Partner Name]">
+      <img src="images/logo-[partner].png" alt="[Partner Name]">
+    </a>
+    -->
+
+  </div>
+  <p class="pt-logos__note">Partner network is growing. If you're interested in working with DRG as a partner, <a href="contact.html" style="color:var(--gold-l); text-decoration:underline; text-underline-offset:3px;">get in touch</a>.</p>
+</section>
+
+<!-- CTA -->
+<section class="pt-cta">
+  <div class="lbl">Work with Us</div>
+  <h2>Not sure which area <em>matters most right now?</em></h2>
+  <p>A short conversation with DRG will tell you where to focus and which partners, if any, make sense for your situation.</p>
+  <div class="pt-cta__btns">
+    <a href="https://calendly.com/toni-datariskgroup/trust-growth-check-in" target="_blank" rel="noopener" class="btn-p">Book a free call →</a>
+    <a href="trust-check.html" class="btn-s">Take the Trust Check first</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-brand">
+    <svg width="16" height="20" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="color:var(--gold);opacity:.7;vertical-align:middle;margin-right:.4rem;margin-bottom:2px;"><path d="M10 1L1.5 4.5V12c0 5.8 3.8 10.8 8.5 12.5C14.7 22.8 18.5 17.8 18.5 12V4.5L10 1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><line x1="10" y1="1" x2="10" y2="24.5" stroke="currentColor" stroke-width="0.7" opacity="0.45"/></svg>
+    Data Risk Group LLC
+  </div>
+  <div class="f-social">
+    <a href="#" class="f-social__link" aria-label="LinkedIn" data-social="linkedin">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M7 10v7M7 7v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M11 17v-4c0-1.1.9-2 2-2s2 .9 2 2v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M11 10v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      LinkedIn
+    </a>
+    <a href="#" class="f-social__link" aria-label="Facebook" data-social="facebook">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M13 21v-8h2.5l.5-3H13V8.5C13 7.7 13.4 7 14.5 7H16V4.3S15 4 13.8 4C11.6 4 10 5.5 10 8v2H7.5v3H10v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Facebook
+    </a>
+    <a href="#" class="f-social__link" aria-label="Eventbrite" data-social="eventbrite">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M8 12h6M8 9h8M8 15h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Eventbrite
+    </a>
+    <a href="#" class="f-social__link" aria-label="Luma" data-social="luma">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M8 17V7l4 7 4-7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Luma
+    </a>
+  </div>
+  <div class="f-copy">© 2026 Data Risk Group LLC — All Rights Reserved</div>
+  <div class="f-links">
+    <a href="privacy.html">Privacy Notice</a>
+    <a href="index.html#sessions">CTC Events</a>
+    <a href="trust-check.html">Trust Check</a>
+    <a href="partners.html">Partners</a>
+    <a href="programs.html">Programs</a>
+    <a href="community.html">Community</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
