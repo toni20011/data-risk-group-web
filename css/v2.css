@@ -302,7 +302,7 @@
 /* ── CREDIBILITY / ABOUT ── */
 .v2-about {
   background: var(--deep);
-  padding: 6rem 3.5rem;
+  padding: 4rem 3.5rem;
 }
 .v2-about__inner {
   display: grid;

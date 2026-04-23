@@ -85,9 +85,8 @@ nav.scrolled {
 
 /* ── HERO ── */
 .hero {
-  min-height: 100vh;
   display: flex; flex-direction: column; justify-content: center;
-  padding: 9rem 3.5rem 5rem;
+  padding: 7rem 3.5rem 4rem;
   position: relative; overflow: hidden;
 }
 .hero::before {
@@ -111,7 +110,7 @@ nav.scrolled {
 
 .hero h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+  font-size: clamp(2.4rem, 4.5vw, 4.4rem);
   font-weight: 700; line-height: 1.06;
   max-width: 780px;
   opacity: 0; animation: up .8s ease forwards .3s;
@@ -184,7 +183,7 @@ nav.scrolled {
 .recog-item::before { content: '✓'; color: var(--teal); font-size: .7rem; font-weight: 700; }
 
 /* ── SECTION SHARED ── */
-section { padding: 6rem 3.5rem; }
+section { padding: 4rem 3.5rem; }
 .lbl {
   font-family: 'DM Mono', monospace; font-size: .68rem;
   color: var(--teal); letter-spacing: .18em; text-transform: uppercase;
@@ -192,8 +191,8 @@ section { padding: 6rem 3.5rem; }
 }
 .sh {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.9rem, 3.5vw, 3rem);
-  font-weight: 700; line-height: 1.18; max-width: 700px;
+  font-size: clamp(1.65rem, 2.5vw, 2.4rem);
+  font-weight: 700; line-height: 1.2; max-width: 700px;
 }
 .sh em { font-style: italic; color: var(--gold); }
 
@@ -214,7 +213,7 @@ section { padding: 6rem 3.5rem; }
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 4rem; align-items: start; margin-top: 2.5rem;
 }
-.prob-intro { font-size: 1.05rem; color: var(--smoke); line-height: 1.8; margin-top: 1.5rem; }
+.prob-intro { font-size: .97rem; color: var(--smoke); line-height: 1.8; margin-top: 1rem; }
 .prob-intro strong { color: var(--white); }
 
 .pain-list { display: flex; flex-direction: column; gap: 1px; margin-top: 1rem; }
@@ -333,7 +332,7 @@ section { padding: 6rem 3.5rem; }
 .cta > * { position: relative; }
 .cta h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
   font-weight: 700; line-height: 1.15;
   max-width: 720px; margin-bottom: 1.25rem;
 }
