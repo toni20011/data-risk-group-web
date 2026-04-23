@@ -10,7 +10,19 @@
   --smoke:  #8FA0B4;
   --white:  #FAFCFF;
   --rule:   rgba(200,160,74,.18);
+
+  /* Page accent — defaults to brand gold; overridden per page below */
+  --page-accent:   #C8A04A;
+  --page-accent-l: #DCBA6A;
 }
+
+/* ── PER-PAGE ACCENT COLOURS ── */
+body.page-programs  { --page-accent: #5AAFD8; --page-accent-l: #7CC5E3; }
+body.page-community { --page-accent: #C4607A; --page-accent-l: #D4849A; }
+body.page-trust     { --page-accent: #3DB5AD; --page-accent-l: #60CAC3; }
+body.page-ai        { --page-accent: #E8C14A; --page-accent-l: #F0D070; }
+body.page-partners  { --page-accent: #5AAFD8; --page-accent-l: #7CC5E3; }
+body.page-contact   { --page-accent: #5BB585; --page-accent-l: #7ECBA0; }
 
 /* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -121,7 +133,7 @@ nav.scrolled {
   max-width: 780px;
   opacity: 0; animation: up .8s ease forwards .3s;
 }
-.hero h1 em { font-style: italic; color: var(--gold); }
+.hero h1 em { font-style: italic; color: var(--page-accent); }
 
 .hero-sub {
   margin-top: 1.8rem;
@@ -167,7 +179,7 @@ nav.scrolled {
   font-size: .9rem; font-weight: 500; letter-spacing: .03em;
   text-decoration: none; border: 1px solid var(--rule); transition: border-color .2s, color .2s;
 }
-.btn-s:hover { border-color: var(--gold); color: var(--gold); }
+.btn-s:hover { border-color: var(--page-accent); color: var(--page-accent); }
 
 /* ── RECOGNITION STRIP ── */
 .recog {
@@ -186,13 +198,13 @@ nav.scrolled {
   font-size: .8rem; color: var(--smoke); font-weight: 500;
   display: flex; align-items: center; gap: .5rem;
 }
-.recog-item::before { content: '✓'; color: var(--teal); font-size: .7rem; font-weight: 700; }
+.recog-item::before { content: '✓'; color: var(--page-accent); font-size: .7rem; font-weight: 700; }
 
 /* ── SECTION SHARED ── */
 section { padding: 4rem 3.5rem; }
 .lbl {
   font-family: 'DM Mono', monospace; font-size: .68rem;
-  color: var(--teal); letter-spacing: .18em; text-transform: uppercase;
+  color: var(--page-accent); letter-spacing: .18em; text-transform: uppercase;
   margin-bottom: .9rem;
 }
 .sh {
@@ -200,7 +212,7 @@ section { padding: 4rem 3.5rem; }
   font-size: clamp(1.65rem, 2.5vw, 2.4rem);
   font-weight: 700; line-height: 1.2; max-width: 700px;
 }
-.sh em { font-style: italic; color: var(--gold); }
+.sh em { font-style: italic; color: var(--page-accent); }
 
 /* ── SCROLL REVEAL ── */
 .reveal {
@@ -231,7 +243,7 @@ section { padding: 4rem 3.5rem; }
 .pain-item:hover { background: var(--panel); }
 .pain-icon {
   width: 26px; height: 26px; flex-shrink: 0; margin-top: .15rem;
-  color: var(--gold);
+  color: var(--page-accent);
 }
 .pain-icon svg { width: 100%; height: 100%; }
 .pain-item h4 { font-size: .95rem; font-weight: 600; margin-bottom: .35rem; }
@@ -248,7 +260,7 @@ section { padding: 4rem 3.5rem; }
   transition: border-color .2s;
   position: relative;
 }
-.for-card:hover { border-color: var(--gold); }
+.for-card:hover { border-color: var(--page-accent); }
 .for-card.primary { border-color: rgba(201,165,90,.4); }
 .for-card.primary::before {
   content: 'PRIMARY FOCUS';
@@ -264,7 +276,7 @@ section { padding: 4rem 3.5rem; }
 .for-card p { font-size: .85rem; color: var(--smoke); line-height: 1.7; }
 .for-card .if-line {
   font-family: 'DM Mono', monospace; font-size: .72rem;
-  color: var(--teal); margin-top: 1.25rem; letter-spacing: .05em;
+  color: var(--page-accent); margin-top: 1.25rem; letter-spacing: .05em;
 }
 
 /* ── HOW IT WORKS ── */
@@ -281,7 +293,7 @@ section { padding: 4rem 3.5rem; }
 .step-n {
   font-family: 'Cormorant Garamond', serif;
   font-size: 4.5rem; font-weight: 700;
-  color: var(--gold); opacity: .15; line-height: 1;
+  color: var(--page-accent); opacity: .15; line-height: 1;
   margin-bottom: 1rem;
 }
 .step h3 {
@@ -303,7 +315,7 @@ section { padding: 4rem 3.5rem; }
 .svc-card:hover { border-color: rgba(201,165,90,.4); }
 .svc-type {
   font-family: 'DM Mono', monospace; font-size: .65rem;
-  color: var(--teal); letter-spacing: .14em; text-transform: uppercase;
+  color: var(--page-accent); letter-spacing: .14em; text-transform: uppercase;
   margin-bottom: 1rem; display: block;
 }
 .svc-card h3 {
@@ -320,7 +332,7 @@ section { padding: 4rem 3.5rem; }
   display: flex; align-items: flex-start; gap: .6rem;
 }
 .svc-card ul li::before {
-  content: '→'; color: var(--gold);
+  content: '→'; color: var(--page-accent);
   flex-shrink: 0; font-size: .75rem; margin-top: .1rem;
 }
 
@@ -342,7 +354,7 @@ section { padding: 4rem 3.5rem; }
   font-weight: 700; line-height: 1.15;
   max-width: 720px; margin-bottom: 1.25rem;
 }
-.cta h2 em { font-style: italic; color: var(--gold); }
+.cta h2 em { font-style: italic; color: var(--page-accent); }
 .cta p { color: var(--smoke); font-size: 1rem; max-width: 550px; margin-bottom: 2.5rem; line-height: 1.75; }
 .cta-btns { display: flex; gap: 1.1rem; flex-wrap: wrap; justify-content: center; }
 .cta-note {
@@ -405,7 +417,7 @@ footer {
   text-transform: uppercase; margin-bottom: 2.5rem;
   transition: color .2s;
 }
-.contact-wrap .back-link:hover { color: var(--gold); }
+.contact-wrap .back-link:hover { color: var(--page-accent); }
 .contact-form { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
 .form-group { display: flex; flex-direction: column; gap: .45rem; }
 .form-group label {
@@ -464,7 +476,7 @@ footer {
   text-transform: uppercase; margin-bottom: 2.5rem;
   transition: color .2s;
 }
-.prose-wrap .back-link:hover { color: var(--gold); }
+.prose-wrap .back-link:hover { color: var(--page-accent); }
 .prose-wrap h1 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
@@ -483,7 +495,7 @@ footer {
   font-size: .92rem; color: var(--smoke); line-height: 1.85;
 }
 .prose-wrap ul { padding-left: 1.5rem; margin-top: .5rem; display: flex; flex-direction: column; gap: .4rem; }
-.prose-wrap a { color: var(--gold); text-decoration: none; }
+.prose-wrap a { color: var(--page-accent); text-decoration: none; }
 .prose-wrap a:hover { text-decoration: underline; }
 
 /* ── BREVO FORM OVERRIDES ── */
