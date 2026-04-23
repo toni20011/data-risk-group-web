@@ -306,8 +306,8 @@
 }
 .v2-about__inner {
   display: grid;
-  grid-template-columns: 200px 1fr auto;
-  gap: 3.5rem; align-items: start;
+  grid-template-columns: 200px 1fr 300px;
+  gap: 3rem; align-items: start;
 }
 .v2-about__photo-wrap {
   display: flex; flex-direction: column; align-items: center;
@@ -658,7 +658,6 @@
   border-left: 3px solid var(--gold);
   background: rgba(201,165,90,.07);
   border-radius: 0 6px 6px 0;
-  max-width: 510px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.15rem;
   font-style: italic;
