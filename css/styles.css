@@ -10,6 +10,7 @@
   --smoke:  #8FA0B4;
   --white:  #FAFCFF;
   --rule:   rgba(200,160,74,.18);
+  --yellow: #F2C94C;
 
   /* Page accent — defaults to brand gold; overridden per page below */
   --page-accent:   #C8A04A;
@@ -17,7 +18,7 @@
 }
 
 /* ── PER-PAGE ACCENT COLOURS ── */
-body.page-programs  { --page-accent: #5AAFD8; --page-accent-l: #7CC5E3; }
+body.page-programs  { --page-accent: #4EAF78; --page-accent-l: #72C896; }
 body.page-community { --page-accent: #C4607A; --page-accent-l: #D4849A; }
 body.page-trust     { --page-accent: #3DB5AD; --page-accent-l: #60CAC3; }
 body.page-ai        { --page-accent: #E8C14A; --page-accent-l: #F0D070; }
@@ -120,7 +121,7 @@ nav.scrolled {
 .hero-kicker {
   display: inline-flex; align-items: center; gap: .7rem;
   font-family: 'DM Mono', monospace; font-size: .68rem;
-  color: rgba(200,160,74,.8); letter-spacing: .2em; text-transform: uppercase;
+  color: var(--yellow); letter-spacing: .2em; text-transform: uppercase;
   margin-bottom: 1.8rem;
   opacity: 0; animation: up .7s ease forwards .15s;
 }

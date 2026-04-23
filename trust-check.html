@@ -417,7 +417,7 @@
   <!-- AREA 1: CLIENT EXPERIENCE (Get Leads) -->
   <div class="tc-section">
     <div class="tc-section__label">
-      <span>Phase 1</span> Get Leads — Client Experience
+      <span>Phase 1</span> Get Leads: Client Experience
     </div>
 
     <div class="tc-question" data-q="1" data-area="ce">
@@ -499,7 +499,7 @@
   <!-- AREA 2: TRANSPARENCY (Convert Clients) -->
   <div class="tc-section">
     <div class="tc-section__label tc-section__label--phase2">
-      <span>Phase 2</span> Convert Clients — Transparency
+      <span>Phase 2</span> Convert Clients: Transparency
     </div>
 
     <div class="tc-question" data-q="4" data-area="tr">
@@ -568,7 +568,7 @@
         </label>
         <label class="tc-option">
           <input type="radio" name="q6" value="0">
-          <span class="tc-option__text">No — I haven't thought about adding this</span>
+          <span class="tc-option__text">No, I haven't thought about adding this</span>
         </label>
       </div>
     </div>
@@ -577,7 +577,7 @@
   <!-- AREA 3: SAFETY (Keep Clients) -->
   <div class="tc-section">
     <div class="tc-section__label tc-section__label--phase3">
-      <span>Phase 3</span> Keep Clients — Safety
+      <span>Phase 3</span> Keep Clients: Safety
     </div>
 
     <div class="tc-question" data-q="7" data-area="sa">
@@ -600,7 +600,7 @@
         </label>
         <label class="tc-option">
           <input type="radio" name="q7" value="0">
-          <span class="tc-option__text">No — I haven't mapped this out</span>
+          <span class="tc-option__text">No, I haven't mapped this out</span>
         </label>
       </div>
     </div>
@@ -642,15 +642,15 @@
         </label>
         <label class="tc-option">
           <input type="radio" name="q9" value="2">
-          <span class="tc-option__text">Informal — I go through the main ones from memory</span>
+          <span class="tc-option__text">Informal: I go through the main ones from memory</span>
         </label>
         <label class="tc-option">
           <input type="radio" name="q9" value="1">
-          <span class="tc-option__text">Sometimes — I try to remember but it's not consistent</span>
+          <span class="tc-option__text">Sometimes, I try to remember but it's not consistent</span>
         </label>
         <label class="tc-option">
           <input type="radio" name="q9" value="0">
-          <span class="tc-option__text">Not really — I haven't done this formally</span>
+          <span class="tc-option__text">Not really, I haven't done this formally</span>
         </label>
       </div>
     </div>
@@ -675,7 +675,7 @@
         </label>
         <label class="tc-option">
           <input type="radio" name="q10" value="0">
-          <span class="tc-option__text">This has happened and I struggled — or I'd be very worried if it did</span>
+          <span class="tc-option__text">This has happened and I struggled, or I'd be very worried if it did</span>
         </label>
       </div>
     </div>
@@ -718,7 +718,7 @@
     <div class="tc-subscores">
       <div class="tc-subscore" id="sub-ce">
         <div class="tc-subscore__header">
-          <span class="tc-subscore__name">Phase 1 — Client Experience</span>
+          <span class="tc-subscore__name">Phase 1: Client Experience</span>
           <span class="tc-subscore__val" id="sub-ce-val">—/10</span>
         </div>
         <div class="tc-bar-track">
@@ -728,7 +728,7 @@
       </div>
       <div class="tc-subscore" id="sub-tr">
         <div class="tc-subscore__header">
-          <span class="tc-subscore__name">Phase 2 — Transparency</span>
+          <span class="tc-subscore__name">Phase 2: Transparency</span>
           <span class="tc-subscore__val" id="sub-tr-val">—/10</span>
         </div>
         <div class="tc-bar-track">
@@ -738,7 +738,7 @@
       </div>
       <div class="tc-subscore" id="sub-sa">
         <div class="tc-subscore__header">
-          <span class="tc-subscore__name">Phase 3 — Client Safety</span>
+          <span class="tc-subscore__name">Phase 3: Client Safety</span>
           <span class="tc-subscore__val" id="sub-sa-val">—/10</span>
         </div>
         <div class="tc-bar-track">
@@ -858,19 +858,19 @@
   const AREA_NOTES = {
     ce: {
       strong: 'Your lead presence is working well. People can find you, understand you, and trust you before they reach out.',
-      mid:    'Your lead presence is decent but there are gaps — likely in social proof or how clearly your positioning reads.',
+      mid:    'Your lead presence is decent but there are gaps, likely in social proof or how clearly your positioning reads.',
       low:    'Clients are likely moving on silently before you know they were there. A clearer first impression would help.',
       weak:   'This is costing you leads. How you show up online needs attention before anything else.'
     },
     tr: {
       strong: 'You communicate clearly about what happens with client information. This builds confidence at the decision point.',
-      mid:    'Some transparency gaps exist — likely around your privacy notice or what happens after someone contacts you.',
+      mid:    'Some transparency gaps exist, likely around your privacy notice or what happens after someone contacts you.',
       low:    'Potential clients are hitting friction at the conversion stage. Clearer communication here could unlock more bookings.',
       weak:   'This is likely your biggest conversion leak right now. People are hesitating but they can\'t name why.'
     },
     sa: {
       strong: 'Your delivery systems are solid. You can answer client questions about tools and access with confidence.',
-      mid:    'You have some safety practices in place, but there are gaps — likely around AI tools or offboarding.',
+      mid:    'You have some safety practices in place, but there are gaps, likely around AI tools or offboarding.',
       low:    'Several delivery-side risks exist. A client or enterprise prospect asking questions could catch you off-guard.',
       weak:   'This needs attention before you take on larger clients or corporate work. The gaps are real and fixable.'
     }
@@ -891,7 +891,7 @@
 
     // Primary: lowest-scoring area
     const [weakestArea] = sorted[0];
-    const areaLabels = { ce: 'Get Leads — Client Experience', tr: 'Convert Clients — Transparency', sa: 'Keep Clients — Safety' };
+    const areaLabels = { ce: 'Get Leads: Client Experience', tr: 'Convert Clients: Transparency', sa: 'Keep Clients: Safety' };
     const areaActions = {
       ce: 'Your lead presence needs the most attention. Start with your positioning and social proof.',
       tr: 'Website and conversion transparency is your biggest gap. Forms, privacy notices, and offer pages.',
@@ -918,7 +918,7 @@
 
     // Specific flag: AI tools (q8 = 0 or 1)
     if (raw.sa !== undefined && parseInt(document.querySelector('input[name="q8"]:checked')?.value ?? '3') < 2) {
-      findings.push({ dot: 'watch', title: 'AI tool practices', body: 'You flagged uncertainty around AI tools and client information. This comes up with clients more than people expect — having a clear, simple position pays off.' });
+      findings.push({ dot: 'watch', title: 'AI tool practices', body: 'You flagged uncertainty around AI tools and client information. This comes up with clients more than people expect; having a clear, simple position pays off.' });
     }
 
     // Specific flag: no offboarding (q9 = 0)
@@ -945,7 +945,7 @@
     }
     return {
       head: 'The gaps are clear. Let\'s map the path forward.',
-      body: 'A 20-minute call is the fastest way to turn this score into a concrete action plan. We\'ll walk through your results and tell you exactly what to fix first — no deck, no pitch.'
+      body: 'A 20-minute call is the fastest way to turn this score into a concrete action plan. We\'ll walk through your results and tell you exactly what to fix first, no deck, no pitch.'
     };
   }
 
